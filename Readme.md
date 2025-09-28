@@ -1,20 +1,22 @@
-# Travel Planner Frontend
+# Travel Planner 前端
 
-一个基于 **React + TypeScript + MUI + Leaflet** 的前端项目，用于展示世界地图并管理旅行计划。  
-后端使用 FastAPI 提供数据支持（可选替换为 Flask）。
+一个基于 **React + TypeScript + MUI + Leaflet** 的旅行计划管理前端项目，支持世界地图展示与旅行计划的可视化管理。后端推荐使用 FastAPI（也可替换为 Flask）。
+
+---
 
 ## 🚀 技术栈
 
-- **React 18 + TypeScript**
-- **Vite** (开发和构建工具)
-- **MUI (Material UI)** (UI 组件库)
-- **Leaflet + react-leaflet** (地图展示)
-- **Axios** (请求后端 API)
+- **React 18 + TypeScript**：现代前端开发框架
+- **Vite**：极速开发与构建工具
+- **MUI (Material UI)**：高质量 UI 组件库
+- **Leaflet + react-leaflet**：地图渲染与交互
+- **Axios**：与后端 API 通信
 
-## 📂 项目结构
+---
+
+## 📂 目录结构
 
 ```
-
 travel-planner-frontend/
 ├── src/
 │   ├── components/   # 可复用 UI 组件
@@ -25,30 +27,32 @@ travel-planner-frontend/
 ├── public/           # 静态资源
 ├── package.json
 └── vite.config.ts
+```
 
-````
+---
 
-## 🔧 启动方式
+## 🛠️ 快速开始
 
-1. 克隆项目：
+1. 克隆项目
+
    ```bash
    git clone https://github.com/yourname/travel-planner-frontend.git
    cd travel-planner-frontend
-````
+   ```
 
-2. 安装依赖：
+2. 安装依赖
 
    ```bash
    npm install
    ```
 
-3. 启动开发环境：
+3. 启动开发环境
 
    ```bash
    npm run dev
    ```
 
-4. 打开浏览器访问：
+4. 打开浏览器访问
 
    ```
    http://localhost:5173/
@@ -56,37 +60,37 @@ travel-planner-frontend/
 
 ---
 
-## ✅ ToDoList
+## 📋 开发计划
 
-### 第一阶段：基础页面搭建
+### 阶段一：基础功能
 
-* [x] 初始化 Vite + React + TS 项目
-* [x] 集成 MUI
-* [x] 添加 Leaflet 地图并成功渲染
-* [ ] 左侧侧边栏 UI（分上下两块：旅行计划展示 + 操作按钮）
-* [ ] “新建计划”按钮点击后弹出对话框（表单：出发地、目的地、日期等）
+- [x] 初始化 Vite + React + TS 项目
+- [x] 集成 MUI
+- [x] 集成 Leaflet 地图
+- [ ] 左侧侧边栏（旅行计划列表 + 操作按钮）
+- [ ] “新建计划”弹窗（表单：出发地、目的地、日期等）
 
-### 第二阶段：与后端交互
+### 阶段二：后端联动
 
-* [ ] 使用 Axios 调用 FastAPI 后端获取已有 travel plans
-* [ ] 将计划渲染到左侧列表
-* [ ] 点击计划后在地图上绘制路线
-* [ ] 新建计划时提交表单数据到后端并刷新页面
+- [ ] 使用 Axios 获取后端 travel plans
+- [ ] 渲染计划到侧边栏
+- [ ] 地图上展示路线
+- [ ] 新建计划表单提交到后端并刷新
 
-### 第三阶段：优化与拓展
+### 阶段三：优化与拓展
 
-* [ ] 添加用户登录（JWT 认证）
-* [ ] 美化 UI（MUI Theme + 响应式布局）
-* [ ] 国际化（i18n，支持英文 / 中文）
-* [ ] 部署到 Vercel / Netlify
+- [ ] 用户登录（JWT 认证）
+- [ ] UI 美化与响应式布局
+- [ ] 国际化（中英文切换）
+- [ ] 部署到 Vercel / Netlify
+
+---
+
+## 💡 说明
+
+- 当前为 MVP（最小可用版本），优先实现核心功能。
+- 后续可拓展如 AI 路线推荐、社交分享、数据可视化等高级功能。
 
 ---
 
-## 📌 备注
-
-* 本项目目前处于 MVP（最小可行版本）阶段，优先保证核心功能实现。
-* 未来可拓展更多功能（如 AI 推荐路线、社交分享、数据可视化等）。
-
-```
-
----
+如有建议或问题，欢迎 issue 或 PR！
