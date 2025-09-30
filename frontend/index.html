@@ -1,13 +1,67 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>frontend</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travelist</title>
+    <!-- Import Element Plus -->
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/element-plus/dist/index.css"/>
+    <!-- Import Vue 3 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/element-plus"></script>
+
+    <!--import leaflet-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+
+      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+</head>
+
+<body>
+    <div id="map"></div>
+    <div class="sidebar">
+        <el-scrollbar height="100%">
+            <el-card shadow="hover">
+                <h2 style="margin:0 0 12px 0">我的旅行</h2>
+                <el-timeline v-for="plan in plans"
+                    :key ="plan.id"
+                    :timestamp = "plan.date"
+                    placement="top">{{ plan.destination }}</el-timeline>
+            </el-card>
+        </el-scrollbar>
+    </div>
+</body>
+<style>
+    #map{
+        height: 100vh;
+        width: 100vw;
+    }
+</style>
+<script>
+    import {ref } from 'vue'
+    import {Plus} from 'element-plus'
+    const plans = ref([
+        {id:1, date:'2023-12-01', destination:'北京'},
+        {id:2, date:'2024-01-15', destination:'上海'},
+        {id:3, date:'2024-03-20', destination:'广州'},
+        {id:4, date:'2024-05-10', destination:'深圳'},
+        {id:5, date:'2024-07-25', destination:'杭州'},
+        {id:6, date:'2024-09-30', destination:'成都'},
+        {id:7, date:'2024-11-05', destination:'西安'},
+        {id:8, date:'2025-01-12', destination:'重庆'},
+        {id:9, date:'2025-03-18', destination:'南京'},
+        {id:10, date:'2025-05-22', destination:'苏州'}
+    ]);
+
+    var map = L.map('map').setView([51.505, -0.09], 13);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+</script>
 </html>
